@@ -1,4 +1,5 @@
 import { AnalyticsProvider } from "@/components/analytics";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -300,7 +301,14 @@ export default function RootLayout({
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <AnalyticsProvider />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

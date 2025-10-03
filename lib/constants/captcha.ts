@@ -1,0 +1,146 @@
+import { CaptchaConfig, PresetConfig } from "../types/captcha";
+
+export const DEFAULT_CONFIG: CaptchaConfig = {
+  type: "mixed",
+  length: 6,
+  darkMode: false,
+  caseSensitive: false,
+  refreshable: true,
+  enableAudio: true,
+  showSuccessAnimation: true,
+  showConfetti: false,
+  autoFocus: false,
+  maxAttempts: 3,
+  refreshInterval: 0,
+  customCharacters: "",
+  language: "english",
+  rtl: false,
+  className: "",
+  customStyles: "",
+  inputButtonStyle: "",
+  validationRequired: true,
+  validationMinLength: 0,
+  validationMaxLength: 0,
+  validationAllowedChars: "",
+  validationCustom: "",
+  confettiParticles: 100,
+  confettiColors: "#ff0000,#00ff00,#0000ff",
+  confettiDuration: 3000,
+  showEventLog: false,
+  sliderWidth: 320,
+  sliderHeight: 180,
+  sliderPieceSize: 42,
+  sliderTolerance: 12,
+  sliderEnableShadow: true,
+  sliderBackgroundImage: "",
+  sliderBackgroundImages: "",
+  mathDifficulty: "medium",
+  mathOperations: ["add", "subtract", "multiply", "divide"],
+  mathRangeMin: 1,
+  mathRangeMax: 20,
+  mathAllowDecimals: false,
+  mathShowHint: true,
+  patternDifficulty: "medium",
+  patternGridSize: 6,
+  patternTypes: ["shape", "color", "rotation", "size"],
+  patternShapes: ["circle", "square", "triangle", "star", "diamond", "hexagon", "heart"],
+  patternColors: ["#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6", "#f97316", "#06b6d4", "#84cc16", "#ec4899"],
+};
+
+export const PRESETS: Record<string, PresetConfig> = {
+  login: {
+    type: "numbers",
+    length: 4,
+    darkMode: false,
+    refreshable: true,
+    enableAudio: false,
+    description: "Simple 4-digit code for login forms",
+  },
+  registration: {
+    type: "mixed",
+    length: 6,
+    caseSensitive: true,
+    enableAudio: true,
+    showSuccessAnimation: true,
+    description: "Secure mixed CAPTCHA for registration",
+  },
+  comment: {
+    type: "letters",
+    length: 5,
+    caseSensitive: false,
+    refreshable: true,
+    description: "User-friendly CAPTCHA for comments",
+  },
+  secure: {
+    type: "mixed",
+    length: 8,
+    caseSensitive: true,
+    maxAttempts: 2,
+    enableAudio: true,
+    description: "High-security CAPTCHA with strict validation",
+  },
+  slider: {
+    type: "slider",
+    sliderWidth: 320,
+    sliderHeight: 180,
+    sliderPieceSize: 42,
+    sliderTolerance: 12,
+    sliderEnableShadow: true,
+    showSuccessAnimation: true,
+    showConfetti: true,
+    maxAttempts: 3,
+    description: "Interactive slider puzzle CAPTCHA",
+  },
+  math: {
+    type: "math",
+    mathDifficulty: "medium",
+    mathOperations: ["add", "subtract", "multiply", "divide"],
+    mathRangeMin: 1,
+    mathRangeMax: 20,
+    enableAudio: true,
+    showSuccessAnimation: true,
+    description: "Solve arithmetic problems - educational and accessible",
+  },
+  pattern: {
+    type: "pattern",
+    patternDifficulty: "medium",
+    patternGridSize: 6,
+    patternTypes: ["shape", "color", "rotation", "size"],
+    showSuccessAnimation: true,
+    showConfetti: true,
+    description: "Visual pattern recognition challenge",
+  },
+};
+
+export const LANGUAGES = {
+  english: { refreshText: "🔄 Refresh", audioText: "🔊 Audio" },
+  german: { refreshText: "🔄 Aktualisieren", audioText: "🔊 Audio" },
+  spanish: { refreshText: "🔄 Actualizar", audioText: "🔊 Audio" },
+};
+
+export const MATH_OPERATIONS = [
+  { key: "add", label: "Addition (+)", symbol: "+" },
+  { key: "subtract", label: "Subtraction (-)", symbol: "-" },
+  { key: "multiply", label: "Multiplication (×)", symbol: "×" },
+  { key: "divide", label: "Division (÷)", symbol: "÷" },
+];
+
+export const PATTERN_TYPES = [
+  { key: "shape", label: "Shape" },
+  { key: "color", label: "Color" },
+  { key: "rotation", label: "Rotation" },
+  { key: "size", label: "Size" },
+  { key: "mixed", label: "Mixed" },
+];
+
+export const PATTERN_SHAPES = [
+  { key: "circle", label: "Circle" },
+  { key: "square", label: "Square" },
+  { key: "triangle", label: "Triangle" },
+  { key: "star", label: "Star" },
+  { key: "diamond", label: "Diamond" },
+  { key: "hexagon", label: "Hexagon" },
+  { key: "heart", label: "Heart" },
+];
+
+export const BROWSERS = ["Chrome", "Firefox", "Safari", "Edge", "Opera"];

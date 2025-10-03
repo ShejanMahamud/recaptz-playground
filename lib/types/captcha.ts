@@ -1,0 +1,76 @@
+export type CaptchaType = "numbers" | "letters" | "mixed" | "slider" | "math" | "pattern";
+export type MathDifficulty = "easy" | "medium" | "hard";
+export type PatternDifficulty = "easy" | "medium" | "hard";
+export type PatternGridSize = 4 | 6 | 9;
+
+export interface CaptchaConfig {
+  type: CaptchaType;
+  length: number;
+  darkMode: boolean;
+  caseSensitive: boolean;
+  refreshable: boolean;
+  enableAudio: boolean;
+  showSuccessAnimation: boolean;
+  showConfetti: boolean;
+  autoFocus: boolean;
+  maxAttempts: number;
+  refreshInterval: number;
+  customCharacters: string;
+  language: string;
+  rtl: boolean;
+  className: string;
+  customStyles: string;
+  inputButtonStyle: string;
+  validationRequired: boolean;
+  validationMinLength: number;
+  validationMaxLength: number;
+  validationAllowedChars: string;
+  validationCustom: string;
+  confettiParticles: number;
+  confettiColors: string;
+  confettiDuration: number;
+  showEventLog: boolean;
+  sliderWidth: number;
+  sliderHeight: number;
+  sliderPieceSize: number;
+  sliderTolerance: number;
+  sliderEnableShadow: boolean;
+  sliderBackgroundImage: string;
+  sliderBackgroundImages: string;
+  mathDifficulty: MathDifficulty;
+  mathOperations: string[];
+  mathRangeMin: number;
+  mathRangeMax: number;
+  mathAllowDecimals: boolean;
+  mathShowHint: boolean;
+  patternDifficulty: PatternDifficulty;
+  patternGridSize: PatternGridSize;
+  patternTypes: string[];
+  patternShapes: string[];
+  patternColors: string[];
+}
+
+export interface PresetConfig {
+  type?: CaptchaType;
+  length?: number;
+  darkMode?: boolean;
+  caseSensitive?: boolean;
+  refreshable?: boolean;
+  enableAudio?: boolean;
+  showSuccessAnimation?: boolean;
+  showConfetti?: boolean;
+  maxAttempts?: number;
+  sliderWidth?: number;
+  sliderHeight?: number;
+  sliderPieceSize?: number;
+  sliderTolerance?: number;
+  sliderEnableShadow?: boolean;
+  mathDifficulty?: MathDifficulty;
+  mathOperations?: string[];
+  mathRangeMin?: number;
+  mathRangeMax?: number;
+  patternDifficulty?: PatternDifficulty;
+  patternGridSize?: PatternGridSize;
+  patternTypes?: string[];
+  description: string;
+}
